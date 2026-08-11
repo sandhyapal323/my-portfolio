@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandhya Pal — Graphic Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f1e6;
+    --bg-alt:#efe7d5;
+    --card:#fffdf7;
+    --ink:#2a231c;
+    --ink-soft:#6e6255;
+    --ink-faint:#9c8f7e;
+    --accent:#ad5330;
+    --accent-soft:#c99a5b;
+    --line:#ddd0b4;
+    --line-soft:#e8ddc7;
+    --maxw:1200px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.serif{
+    font-family:'Fraunces', Georgia, 'Times New Roman', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;height:auto;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+  }
+  .num{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--accent-soft);
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky;top:0;z-index:500;
+    background:rgba(246,241,230,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:20px 40px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-mark{font-family:'Fraunces',serif;font-size:19px;font-weight:500;letter-spacing:0.01em;}
+  .nav-links{display:flex;gap:36px;font-size:13.5px;letter-spacing:0.04em;text-transform:uppercase;}
+  .nav-links a{color:var(--ink-soft);transition:color .2s;padding-bottom:2px;border-bottom:1px solid transparent;}
+  .nav-links a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    max-width:var(--maxw);margin:0 auto;padding:64px 40px 100px;
+    display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;
+  }
+  .hero-text .eyebrow{margin-bottom:22px;display:block;}
+  .hero-text h1{font-size:clamp(40px,5vw,64px);line-height:1.04;margin-bottom:22px;}
+  .hero-text .role-line{font-size:16px;color:var(--ink-soft);margin-bottom:26px;letter-spacing:0.01em;}
+  .hero-text .role-line .dot{margin:0 10px;color:var(--accent-soft);}
+  .hero-text .positioning{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+    font-size:20px;line-height:1.5;color:var(--ink);
+    max-width:440px;border-left:2px solid var(--accent-soft);padding-left:20px;
+  }
+  .hero-visual{
+    position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;
+    background:var(--card);box-shadow:0 30px 60px -20px rgba(42,35,28,0.25);
+  }
+  .hero-visual img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    opacity:0;transition:opacity 1.4s ease;
+  }
+  .hero-visual img.active{opacity:1;}
+  .hero-visual::after{
+    content:"";position:absolute;inset:0;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);
+    pointer-events:none;
+  }
+  .hero-caption{
+    position:absolute;left:18px;bottom:16px;z-index:2;
+    font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;
+    color:#fff8ec;background:rgba(42,35,28,0.55);padding:6px 12px;border-radius:2px;
+  }
+
+  section{padding:100px 0;}
+  .section-head{max-width:var(--maxw);margin:0 auto 56px;padding:0 40px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);}
+  .section-head .eyebrow{margin-bottom:14px;display:block;}
+  .section-sub{color:var(--ink-soft);font-size:15.5px;max-width:560px;margin-top:14px;line-height:1.6;}
+
+  .alt-bg{background:var(--bg-alt);}
+
+  /* ---------- FILTER CHIPS ---------- */
+  .filters{
+    display:flex;flex-wrap:wrap;gap:10px;max-width:var(--maxw);margin:-24px auto 48px;padding:0 40px;
+  }
+  .chip{
+    font-size:12.5px;letter-spacing:0.05em;text-transform:uppercase;
+    padding:9px 18px;border:1px solid var(--line);border-radius:30px;
+    color:var(--ink-soft);cursor:pointer;background:transparent;transition:all .2s;
+    font-family:'Work Sans',sans-serif;
+  }
+  .chip:hover{border-color:var(--accent-soft);color:var(--ink);}
+  .chip.active{background:var(--ink);border-color:var(--ink);color:var(--bg);}
+
+  /* ---------- WORK LIST ---------- */
+  .work-list{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+  .work-item{
+    display:grid;grid-template-columns:110px 1fr 340px;gap:40px;align-items:center;
+    padding:44px 0;border-top:1px solid var(--line);cursor:pointer;
+    transition:background .25s;
+  }
+  .work-item:last-child{border-bottom:1px solid var(--line);}
+  .work-item:hover{background:rgba(173,83,48,0.04);}
+  .work-item .num{font-size:34px;}
+  .work-meta h3{font-size:26px;margin-bottom:10px;}
+  .work-meta .tag{
+    font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-faint);
+  }
+  .work-meta .desc{color:var(--ink-soft);font-size:14.5px;margin-top:10px;line-height:1.6;max-width:480px;}
+  .work-thumb{
+    aspect-ratio:4/3;overflow:hidden;border-radius:3px;position:relative;background:var(--card);
+    box-shadow:0 18px 34px -18px rgba(42,35,28,0.28);
+  }
+  .work-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .work-item:hover .work-thumb img{transform:scale(1.045);}
+  .work-arrow{
+    position:absolute;right:12px;top:12px;width:34px;height:34px;border-radius:50%;
+    background:rgba(255,253,247,0.92);display:flex;align-items:center;justify-content:center;
+    font-size:16px;color:var(--ink);opacity:0;transition:opacity .25s;
+  }
+  .work-item:hover .work-arrow{opacity:1;}
+
+  @media (max-width:860px){
+    .work-item{grid-template-columns:50px 1fr;}
+    .work-thumb{grid-column:1 / -1;order:3;aspect-ratio:16/10;}
+  }
+
+  /* ---------- GALLERY GRIDS ---------- */
+  .gallery-grid{
+    max-width:var(--maxw);margin:0 auto;padding:0 40px;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  }
+  .gallery-grid.pair{grid-template-columns:repeat(2,1fr);gap:30px;}
+  .gallery-grid.more-grid{grid-template-columns:repeat(4,1fr);}
+  .gtile{
+    border-radius:3px;overflow:hidden;background:var(--card);
+    box-shadow:0 16px 32px -18px rgba(42,35,28,0.25);position:relative;
+  }
+  .gtile img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform .6s;cursor:zoom-in;}
+  .gtile.wide img{aspect-ratio:16/11;}
+  .gtile:hover img{transform:scale(1.04);}
+  .gtile .glabel{
+    position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;
+    background:linear-gradient(to top, rgba(20,16,12,0.65), rgba(20,16,12,0));
+    color:#fff8ec;font-size:12px;letter-spacing:0.04em;
+    pointer-events:none;
+  }
+  .mw-empty{
+    grid-column:1 / -1;border:1px dashed var(--line);border-radius:4px;
+    padding:60px 30px;text-align:center;color:var(--ink-faint);font-size:14px;
+  }
+  .mw-tile{position:relative;}
+  .mw-badge{
+    position:absolute;top:10px;right:10px;z-index:2;
+    background:rgba(42,35,28,0.72);color:#fff8ec;font-size:11px;letter-spacing:0.03em;
+    padding:4px 9px;border-radius:20px;pointer-events:none;
+  }
+  .mw-hidden-group{display:none;}
+  .project-subhead{
+    font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);
+    margin:50px 0 20px;font-weight:600;
+  }
+  .project-subhead:first-of-type{margin-top:0;}
+  @media (max-width:860px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid.pair{grid-template-columns:1fr;}
+    .gallery-grid.more-grid{grid-template-columns:repeat(2,1fr);}
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    max-width:var(--maxw);margin:0 auto;padding:0 40px;
+    display:grid;grid-template-columns:300px 1fr;gap:70px;align-items:start;
+  }
+  .monogram{
+    aspect-ratio:4/5;border-radius:4px;background:var(--card);
+    border:1px solid var(--line);overflow:hidden;
+    display:flex;align-items:center;justify-content:center;flex-direction:column;
+    box-shadow:0 24px 50px -24px rgba(42,35,28,0.3);
+  }
+  .monogram img{width:100%;height:100%;object-fit:cover;object-position:58% 18%;}
+  .monogram .letters{font-family:'Fraunces',serif;font-size:76px;color:var(--accent);letter-spacing:0.02em;}
+  .monogram .mline{width:40px;height:1px;background:var(--line);margin:18px 0;}
+  .monogram .mtag{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);}
+  .about-copy p{font-size:17px;line-height:1.85;color:var(--ink);margin:0 0 22px;max-width:620px;}
+  .about-copy .lead{font-family:'Fraunces',serif;font-size:23px;font-weight:400;line-height:1.55;color:var(--ink);margin-bottom:28px;}
+
+  /* ---------- EXPERIENCE ---------- */
+  .timeline{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+  .trow{
+    display:grid;grid-template-columns:200px 1fr 1.3fr;gap:30px;
+    padding:32px 0;border-top:1px solid var(--line);
+  }
+  .trow:last-child{border-bottom:1px solid var(--line);}
+  .trow .period{color:var(--ink-faint);font-size:13.5px;letter-spacing:0.03em;padding-top:3px;}
+  .trow h4{font-size:20px;margin-bottom:4px;}
+  .trow .role{color:var(--accent);font-size:13px;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:4px;display:block;}
+  .trow .work-desc{color:var(--ink-soft);font-size:14.5px;line-height:1.7;}
+  @media (max-width:760px){ .trow{grid-template-columns:1fr;gap:8px;} }
+
+  /* ---------- EDUCATION + SKILLS ---------- */
+  .es-grid{
+    max-width:var(--maxw);margin:0 auto;padding:0 40px;
+    display:grid;grid-template-columns:1fr 1fr;gap:70px;
+  }
+  .es-block h3{font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:26px;font-family:'Work Sans',sans-serif;font-weight:600;}
+  .edu-item h4{font-size:21px;margin-bottom:6px;}
+  .edu-item .edu-period{color:var(--ink-faint);font-size:13.5px;margin-bottom:10px;display:block;}
+  .edu-item p{color:var(--ink-soft);font-size:14.5px;}
+  .tool-group{margin-bottom:30px;}
+  .tool-group .tg-label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block;}
+  .tool-tags{display:flex;flex-wrap:wrap;gap:10px;}
+  .tool-tags span{
+    font-size:14.5px;padding:8px 16px;border:1px solid var(--line);border-radius:30px;color:var(--ink);
+  }
+  .tool-group.core .tool-tags span{
+    border-color:var(--accent-soft);background:var(--card);font-weight:500;font-size:15.5px;padding:9px 20px;
+  }
+  .tool-group.secondary .tool-tags span{color:var(--ink-soft);font-size:13.5px;padding:6px 14px;}
+  @media (max-width:860px){ .es-grid{grid-template-columns:1fr;} }
+
+  /* ---------- CONTACT ---------- */
+  .contact-wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;text-align:left;}
+  .contact-inner{
+    display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:40px;
+    border-top:1px solid var(--line);padding-top:56px;
+  }
+  .contact-cta h2{font-size:clamp(32px,4.5vw,52px);margin-bottom:20px;max-width:600px;}
+  .contact-details{display:flex;flex-direction:column;gap:22px;align-items:flex-start;}
+  .contact-details a, .contact-details span{font-size:17px;color:var(--ink-soft);}
+  .contact-details a{transition:color .2s;}
+  .contact-details a:hover{color:var(--accent);}
+  .contact-details .cd-item{display:flex;flex-direction:column;gap:5px;}
+  .contact-details .cd-row{display:flex;align-items:center;gap:10px;}
+  .contact-details .cd-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);}
+  footer{
+    max-width:var(--maxw);margin:70px auto 0;padding:26px 40px 40px;
+    display:flex;justify-content:space-between;color:var(--ink-faint);font-size:12.5px;
+    border-top:1px solid var(--line-soft);
+  }
+
+  /* ---------- PROJECT OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;background:var(--bg);z-index:1000;
+    overflow-y:auto;transform:translateY(100%);transition:transform .5s cubic-bezier(.16,.84,.44,1);
+  }
+  .overlay.open{transform:translateY(0);}
+  .overlay-head{
+    position:sticky;top:0;background:rgba(246,241,230,0.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-soft);z-index:5;
+  }
+  .overlay-head-inner{
+    max-width:var(--maxw);margin:0 auto;padding:22px 40px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .overlay-title{font-family:'Fraunces',serif;font-size:19px;}
+  .close-btn{
+    background:none;border:1px solid var(--line);border-radius:50%;width:38px;height:38px;
+    font-size:18px;cursor:pointer;color:var(--ink);display:flex;align-items:center;justify-content:center;
+  }
+  .close-btn:hover{border-color:var(--accent);color:var(--accent);}
+  .overlay-body{max-width:1000px;margin:0 auto;padding:56px 40px 120px;}
+  .overlay-eyebrow{margin-bottom:18px;}
+  .overlay-body h1{font-size:clamp(32px,5vw,52px);margin-bottom:18px;}
+  .overlay-intro{color:var(--ink-soft);font-size:16.5px;line-height:1.8;max-width:660px;margin-bottom:8px;}
+  .skill-pills{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 60px;}
+  .skill-pills span{font-size:12.5px;letter-spacing:0.03em;padding:7px 15px;border:1px solid var(--line);border-radius:30px;color:var(--ink-soft);}
+
+  /* spread viewer (catalogue) */
+  .spread-viewer{margin-top:10px;}
+  .spread-stage{
+    position:relative;background:var(--card);border:1px solid var(--line);border-radius:4px;
+    box-shadow:0 30px 60px -30px rgba(42,35,28,0.35);overflow:hidden;
+    display:flex;align-items:center;justify-content:center;min-height:400px;
+  }
+  .spread-stage img{max-height:72vh;width:auto;margin:0 auto;cursor:zoom-in;}
+  .spread-nav{display:flex;align-items:center;justify-content:space-between;margin-top:20px;}
+  .spread-btn{
+    background:var(--ink);color:var(--bg);border:none;width:46px;height:46px;border-radius:50%;
+    font-size:18px;cursor:pointer;transition:opacity .2s;
+  }
+  .spread-btn:disabled{opacity:0.25;cursor:default;}
+  .spread-btn:not(:disabled):hover{background:var(--accent);}
+  .spread-label{font-size:13.5px;color:var(--ink-soft);text-align:center;}
+  .spread-label .cur-num{color:var(--ink);font-weight:600;}
+  .spread-dots{display:flex;gap:7px;justify-content:center;margin-top:22px;}
+  .spread-dots span{width:7px;height:7px;border-radius:50%;background:var(--line);cursor:pointer;transition:background .2s;}
+  .spread-dots span.active{background:var(--accent);}
+
+  /* structural panels (packaging project) */
+  .panel-block{margin-bottom:70px;}
+  .panel-block .pb-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;}
+  .panel-block .pb-label h3{font-size:22px;}
+  .panel-block .pb-label .pb-tag{font-size:12px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;}
+  .panel-img{
+    border-radius:4px;overflow:hidden;background:#fff;border:1px solid var(--line);
+    box-shadow:0 26px 50px -28px rgba(42,35,28,0.3);
+  }
+  .panel-img img{cursor:zoom-in;}
+  .panel-img.small{max-width:520px;}
+  .panel-note{color:var(--ink-soft);font-size:14px;margin-top:14px;line-height:1.7;max-width:560px;}
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{
+    position:fixed;inset:0;background:rgba(20,16,12,0.94);z-index:3000;
+    display:none;align-items:center;justify-content:center;padding:50px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:90vw;max-height:84vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,0.5);border-radius:2px;}
+  .lightbox-close{
+    position:absolute;top:26px;right:32px;width:42px;height:42px;border-radius:50%;
+    background:rgba(255,253,247,0.12);border:1px solid rgba(255,253,247,0.3);color:#fff8ec;
+    font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;
+  }
+  .lightbox-close:hover{background:rgba(255,253,247,0.22);}
+  .lightbox-nav{
+    position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;
+    background:rgba(255,253,247,0.12);border:1px solid rgba(255,253,247,0.3);color:#fff8ec;
+    font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;
+  }
+  .lightbox-nav:hover{background:rgba(255,253,247,0.22);}
+  .lightbox-nav.prev{left:26px;}
+  .lightbox-nav.next{right:26px;}
+  .lightbox-caption{
+    position:absolute;bottom:28px;left:0;right:0;text-align:center;
+    color:#f2ead9;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;
+  }
+
+  ::selection{background:var(--accent-soft);color:#fff;}
+
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .hero{grid-template-columns:1fr;padding-top:40px;}
+    .hero-visual{order:-1;aspect-ratio:5/4;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-grid .monogram{max-width:220px;}
+    section{padding:70px 0;}
+    .contact-inner{align-items:flex-start;}
+    .lightbox-nav{width:40px;height:40px;font-size:16px;}
+    .lightbox-nav.prev{left:10px;}
+    .lightbox-nav.next{right:10px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">Sandhya Pal</a>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" style="padding-bottom:0;">
+  <div class="hero-text">
+    <span class="eyebrow">Graphic Designer — Mumbai, India</span>
+    <h1>Sandhya Pal</h1>
+    <div class="role-line">Two years, commercial design<span class="dot">·</span>Product, packaging &amp; catalogue work</div>
+    <p class="positioning">Graphic Designer exploring ideas through type, image and visual storytelling.</p>
+  </div>
+  <div class="hero-visual" id="heroVisual">
+    <img src="images/catalogue/01-cover.jpg" class="active" data-label="Modware Kitchen Appliances Catalogue">
+    <img src="images/packaging/rico-nutri-fresh-dieline.jpg" data-label="Packaging &amp; Structural Design">
+    <img src="images/cello/living-room.jpg" data-label="Cello Novelty Shoe Rack Campaign">
+    <img src="images/surface/rose-gold-ring.jpg" data-label="Reflective Surface Editing">
+    <img src="images/festive/gudi-padwa.jpg" data-label="Festive &amp; Cultural Illustration">
+    <div class="hero-caption" id="heroCaption">Modware Kitchen Appliances Catalogue</div>
+  </div>
+</section>
+
+<!-- ================= SELECTED WORK ================= -->
+<section id="work">
+  <div class="section-head">
+    <span class="eyebrow">Selected Work</span>
+    <h2>Commercial design, from packaging to shelf.</h2>
+    <p class="section-sub">Six bodies of work spanning catalogue layout, structural packaging, product campaigns, e-commerce creative, surface retouching and festive illustration.</p>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="chip active" data-filter="all">All Work</button>
+    <button class="chip" data-filter="packaging">Packaging &amp; Catalogue</button>
+    <button class="chip" data-filter="ecommerce">Product &amp; E-commerce</button>
+    <button class="chip" data-filter="surface">Product &amp; Surface Editing</button>
+    <button class="chip" data-filter="illustration">Illustration &amp; Festive</button>
+  </div>
+
+  <div class="work-list">
+
+    <div class="work-item" data-filter="packaging" data-project="catalogue">
+      <div class="num">01</div>
+      <div class="work-meta">
+        <span class="tag">Print &amp; Catalogue Design</span>
+        <h3>Modware Kitchen Appliances Catalogue</h3>
+        <p class="desc">A seven-page product catalogue — grid systems, information hierarchy and brand consistency across a full thermoware range.</p>
+      </div>
+      <div class="work-thumb">
+        <img src="images/catalogue/01-cover.jpg" alt="Modware catalogue cover">
+        <div class="work-arrow">↗</div>
+      </div>
+    </div>
+
+    <div class="work-item" data-filter="packaging" data-project="packaging">
+      <div class="num">02</div>
+      <div class="work-meta">
+        <span class="tag">Packaging Design</span>
+        <h3>Packaging &amp; Structural Design</h3>
+        <p class="desc">Dieline layout and fold logic for a blender box and an insulated tumbler, plus a fold-out warranty card and user manual.</p>
+      </div>
+      <div class="work-thumb">
+        <img src="images/packaging/rico-nutri-fresh-dieline.jpg" alt="Rico Nutri Fresh packaging dieline">
+        <div class="work-arrow">↗</div>
+      </div>
+    </div>
+
+    <div class="work-item" data-filter="ecommerce" data-project="cello">
+      <div class="num">03</div>
+      <div class="work-meta">
+        <span class="tag">Product &amp; E-commerce Design</span>
+        <h3>Cello Novelty Shoe Rack Campaign</h3>
+        <p class="desc">One product, three treatments — hero shot, room-by-room lifestyle staging, and installation detail across two colourways.</p>
+      </div>
+      <div class="work-thumb">
+        <img src="images/cello/hero-charcoal.jpg" alt="Cello Novelty shoe rack cabinet">
+        <div class="work-arrow">↗</div>
+      </div>
+    </div>
+
+    <div class="work-item" data-filter="ecommerce" data-project="ecommerce">
+      <div class="num">04</div>
+      <div class="work-meta">
+        <span class="tag">Product &amp; E-commerce Design</span>
+        <h3>Product &amp; E-commerce Creative</h3>
+        <p class="desc">Feature-led advertisements and listing creatives built for the shelf and the scroll — appliances, storage and kitchenware.</p>
+      </div>
+      <div class="work-thumb">
+        <img src="images/ecommerce/philips-kettle-banner.jpg" alt="Philips kettle advertisement">
+        <div class="work-arrow">↗</div>
+      </div>
+    </div>
+
+    <div class="work-item" data-filter="surface" data-project="surface">
+      <div class="num">05</div>
+      <div class="work-meta">
+        <span class="tag">Product &amp; Technical Editing</span>
+        <h3>Reflective Surface Editing</h3>
+        <p class="desc">Steel, glass and jewellery — the materials that are hardest to edit convincingly, finished with consistent, careful retouching.</p>
+      </div>
+      <div class="work-thumb">
+        <img src="images/surface/steel-casserole.jpg" alt="Stainless steel casserole product editing">
+        <div class="work-arrow">↗</div>
+      </div>
+    </div>
+
+    <div class="work-item" data-filter="illustration" data-project="festive">
+      <div class="num">06</div>
+      <div class="work-meta">
+        <span class="tag">Illustration · Festive · Cultural</span>
+        <h3>Festive &amp; Cultural Illustration</h3>
+        <p class="desc">Vector illustration and typography for Gudi Padwa, Makar Sankranti, Republic Day and Maha Shivratri, produced for Aadhya Graphics.</p>
+      </div>
+      <div class="work-thumb">
+        <img src="images/festive/gudi-padwa.jpg" alt="Gudi Padwa festive illustration">
+        <div class="work-arrow">↗</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= MORE WORK ================= -->
+<section id="more-work">
+  <div class="section-head">
+    <span class="eyebrow">More Work</span>
+    <h2>Additional selected pieces.</h2>
+    <p class="section-sub">A wider set of product, packaging and creative work. Click any piece to view it larger.</p>
+  </div>
+  <div class="gallery-grid more-grid" id="moreWorkGrid">
+    <!-- MORE_WORK_ITEMS_START -->
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-bullet-blender" data-caption="Cello Bullet Blender" src="images/more/bullet-blender/1.jpg" alt="Cello Bullet Blender">
+        <div class="glabel">Cello Bullet Blender</div>
+        <span class="mw-badge">+2</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-bullet-blender" data-caption="Cello Bullet Blender" src="images/more/bullet-blender/2.jpg" alt="Cello Bullet Blender">
+        <img class="zoomable" data-group="mw-bullet-blender" data-caption="Cello Bullet Blender" src="images/more/bullet-blender/3.jpg" alt="Cello Bullet Blender">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-mixer-grinder-range" data-caption="Mixer Grinder — Multi-Colour Range" src="images/more/mixer-grinder-range/1.jpg" alt="Mixer Grinder — Multi-Colour Range">
+        <div class="glabel">Mixer Grinder — Multi-Colour Range</div>
+        <span class="mw-badge">+5</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-mixer-grinder-range" data-caption="Mixer Grinder — Multi-Colour Range" src="images/more/mixer-grinder-range/2.jpg" alt="Mixer Grinder — Multi-Colour Range">
+        <img class="zoomable" data-group="mw-mixer-grinder-range" data-caption="Mixer Grinder — Multi-Colour Range" src="images/more/mixer-grinder-range/3.jpg" alt="Mixer Grinder — Multi-Colour Range">
+        <img class="zoomable" data-group="mw-mixer-grinder-range" data-caption="Mixer Grinder — Multi-Colour Range" src="images/more/mixer-grinder-range/4.jpg" alt="Mixer Grinder — Multi-Colour Range">
+        <img class="zoomable" data-group="mw-mixer-grinder-range" data-caption="Mixer Grinder — Multi-Colour Range" src="images/more/mixer-grinder-range/5.jpg" alt="Mixer Grinder — Multi-Colour Range">
+        <img class="zoomable" data-group="mw-mixer-grinder-range" data-caption="Mixer Grinder — Multi-Colour Range" src="images/more/mixer-grinder-range/6.jpg" alt="Mixer Grinder — Multi-Colour Range">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-nutri-maxx-pro" data-caption="Nutri Maxx Pro — Personal Blender" src="images/more/nutri-maxx-pro/1.jpg" alt="Nutri Maxx Pro — Personal Blender">
+        <div class="glabel">Nutri Maxx Pro — Personal Blender</div>
+        <span class="mw-badge">+4</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-nutri-maxx-pro" data-caption="Nutri Maxx Pro — Personal Blender" src="images/more/nutri-maxx-pro/2.jpg" alt="Nutri Maxx Pro — Personal Blender">
+        <img class="zoomable" data-group="mw-nutri-maxx-pro" data-caption="Nutri Maxx Pro — Personal Blender" src="images/more/nutri-maxx-pro/3.jpg" alt="Nutri Maxx Pro — Personal Blender">
+        <img class="zoomable" data-group="mw-nutri-maxx-pro" data-caption="Nutri Maxx Pro — Personal Blender" src="images/more/nutri-maxx-pro/4.jpg" alt="Nutri Maxx Pro — Personal Blender">
+        <img class="zoomable" data-group="mw-nutri-maxx-pro" data-caption="Nutri Maxx Pro — Personal Blender" src="images/more/nutri-maxx-pro/5.jpg" alt="Nutri Maxx Pro — Personal Blender">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-otg" data-caption="Oven Toaster Grill" src="images/more/otg/1.jpg" alt="Oven Toaster Grill">
+        <div class="glabel">Oven Toaster Grill</div>
+        
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-cookware-set" data-caption="Nonstick Cookware Set" src="images/more/cookware-set/1.jpg" alt="Nonstick Cookware Set">
+        <div class="glabel">Nonstick Cookware Set</div>
+        
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-roti-maker" data-caption="Roti / Chapati Maker" src="images/more/roti-maker/1.jpg" alt="Roti / Chapati Maker">
+        <div class="glabel">Roti / Chapati Maker</div>
+        <span class="mw-badge">+3</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-roti-maker" data-caption="Roti / Chapati Maker" src="images/more/roti-maker/2.jpg" alt="Roti / Chapati Maker">
+        <img class="zoomable" data-group="mw-roti-maker" data-caption="Roti / Chapati Maker" src="images/more/roti-maker/3.jpg" alt="Roti / Chapati Maker">
+        <img class="zoomable" data-group="mw-roti-maker" data-caption="Roti / Chapati Maker" src="images/more/roti-maker/4.jpg" alt="Roti / Chapati Maker">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-sandwich-maker" data-caption="Sandwich Maker" src="images/more/sandwich-maker/1.jpg" alt="Sandwich Maker">
+        <div class="glabel">Sandwich Maker</div>
+        <span class="mw-badge">+2</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-sandwich-maker" data-caption="Sandwich Maker" src="images/more/sandwich-maker/2.jpg" alt="Sandwich Maker">
+        <img class="zoomable" data-group="mw-sandwich-maker" data-caption="Sandwich Maker" src="images/more/sandwich-maker/3.jpg" alt="Sandwich Maker">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-citrus-juicer" data-caption="Citrus Juicer" src="images/more/citrus-juicer/1.jpg" alt="Citrus Juicer">
+        <div class="glabel">Citrus Juicer</div>
+        <span class="mw-badge">+2</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-citrus-juicer" data-caption="Citrus Juicer" src="images/more/citrus-juicer/2.jpg" alt="Citrus Juicer">
+        <img class="zoomable" data-group="mw-citrus-juicer" data-caption="Citrus Juicer" src="images/more/citrus-juicer/3.jpg" alt="Citrus Juicer">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-travel-kettle" data-caption="Travel Kettle &amp; Cook Set" src="images/more/travel-kettle/1.jpg" alt="Travel Kettle &amp; Cook Set">
+        <div class="glabel">Travel Kettle &amp; Cook Set</div>
+        <span class="mw-badge">+3</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-travel-kettle" data-caption="Travel Kettle &amp; Cook Set" src="images/more/travel-kettle/2.jpg" alt="Travel Kettle &amp; Cook Set">
+        <img class="zoomable" data-group="mw-travel-kettle" data-caption="Travel Kettle &amp; Cook Set" src="images/more/travel-kettle/3.jpg" alt="Travel Kettle &amp; Cook Set">
+        <img class="zoomable" data-group="mw-travel-kettle" data-caption="Travel Kettle &amp; Cook Set" src="images/more/travel-kettle/4.jpg" alt="Travel Kettle &amp; Cook Set">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-pressure-cooker" data-caption="Stainless Steel Pressure Cooker" src="images/more/pressure-cooker/1.jpg" alt="Stainless Steel Pressure Cooker">
+        <div class="glabel">Stainless Steel Pressure Cooker</div>
+        <span class="mw-badge">+3</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-pressure-cooker" data-caption="Stainless Steel Pressure Cooker" src="images/more/pressure-cooker/2.jpg" alt="Stainless Steel Pressure Cooker">
+        <img class="zoomable" data-group="mw-pressure-cooker" data-caption="Stainless Steel Pressure Cooker" src="images/more/pressure-cooker/3.jpg" alt="Stainless Steel Pressure Cooker">
+        <img class="zoomable" data-group="mw-pressure-cooker" data-caption="Stainless Steel Pressure Cooker" src="images/more/pressure-cooker/4.jpg" alt="Stainless Steel Pressure Cooker">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-dry-iron" data-caption="Electric Dry Iron" src="images/more/dry-iron/1.jpg" alt="Electric Dry Iron">
+        <div class="glabel">Electric Dry Iron</div>
+        <span class="mw-badge">+2</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-dry-iron" data-caption="Electric Dry Iron" src="images/more/dry-iron/2.jpg" alt="Electric Dry Iron">
+        <img class="zoomable" data-group="mw-dry-iron" data-caption="Electric Dry Iron" src="images/more/dry-iron/3.jpg" alt="Electric Dry Iron">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-chopper-whisk" data-caption="2-in-1 Chopper &amp; Whisk" src="images/more/chopper-whisk/1.jpg" alt="2-in-1 Chopper &amp; Whisk">
+        <div class="glabel">2-in-1 Chopper &amp; Whisk</div>
+        <span class="mw-badge">+6</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-chopper-whisk" data-caption="2-in-1 Chopper &amp; Whisk" src="images/more/chopper-whisk/2.jpg" alt="2-in-1 Chopper &amp; Whisk">
+        <img class="zoomable" data-group="mw-chopper-whisk" data-caption="2-in-1 Chopper &amp; Whisk" src="images/more/chopper-whisk/3.jpg" alt="2-in-1 Chopper &amp; Whisk">
+        <img class="zoomable" data-group="mw-chopper-whisk" data-caption="2-in-1 Chopper &amp; Whisk" src="images/more/chopper-whisk/4.jpg" alt="2-in-1 Chopper &amp; Whisk">
+        <img class="zoomable" data-group="mw-chopper-whisk" data-caption="2-in-1 Chopper &amp; Whisk" src="images/more/chopper-whisk/5.jpg" alt="2-in-1 Chopper &amp; Whisk">
+        <img class="zoomable" data-group="mw-chopper-whisk" data-caption="2-in-1 Chopper &amp; Whisk" src="images/more/chopper-whisk/6.jpg" alt="2-in-1 Chopper &amp; Whisk">
+        <img class="zoomable" data-group="mw-chopper-whisk" data-caption="2-in-1 Chopper &amp; Whisk" src="images/more/chopper-whisk/7.jpg" alt="2-in-1 Chopper &amp; Whisk">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-desk-organizer" data-caption="Drawer &amp; Desk Organiser Trays" src="images/more/desk-organizer/1.jpg" alt="Drawer &amp; Desk Organiser Trays">
+        <div class="glabel">Drawer &amp; Desk Organiser Trays</div>
+        <span class="mw-badge">+8</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-desk-organizer" data-caption="Drawer &amp; Desk Organiser Trays" src="images/more/desk-organizer/2.jpg" alt="Drawer &amp; Desk Organiser Trays">
+        <img class="zoomable" data-group="mw-desk-organizer" data-caption="Drawer &amp; Desk Organiser Trays" src="images/more/desk-organizer/3.jpg" alt="Drawer &amp; Desk Organiser Trays">
+        <img class="zoomable" data-group="mw-desk-organizer" data-caption="Drawer &amp; Desk Organiser Trays" src="images/more/desk-organizer/4.jpg" alt="Drawer &amp; Desk Organiser Trays">
+        <img class="zoomable" data-group="mw-desk-organizer" data-caption="Drawer &amp; Desk Organiser Trays" src="images/more/desk-organizer/5.jpg" alt="Drawer &amp; Desk Organiser Trays">
+        <img class="zoomable" data-group="mw-desk-organizer" data-caption="Drawer &amp; Desk Organiser Trays" src="images/more/desk-organizer/6.jpg" alt="Drawer &amp; Desk Organiser Trays">
+        <img class="zoomable" data-group="mw-desk-organizer" data-caption="Drawer &amp; Desk Organiser Trays" src="images/more/desk-organizer/7.jpg" alt="Drawer &amp; Desk Organiser Trays">
+        <img class="zoomable" data-group="mw-desk-organizer" data-caption="Drawer &amp; Desk Organiser Trays" src="images/more/desk-organizer/8.jpg" alt="Drawer &amp; Desk Organiser Trays">
+        <img class="zoomable" data-group="mw-desk-organizer" data-caption="Drawer &amp; Desk Organiser Trays" src="images/more/desk-organizer/9.jpg" alt="Drawer &amp; Desk Organiser Trays">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-kids-water-bottle" data-caption="Kids Water Bottle — Little Explorers" src="images/more/kids-water-bottle/1.jpg" alt="Kids Water Bottle — Little Explorers">
+        <div class="glabel">Kids Water Bottle — Little Explorers</div>
+        <span class="mw-badge">+5</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-kids-water-bottle" data-caption="Kids Water Bottle — Little Explorers" src="images/more/kids-water-bottle/2.jpg" alt="Kids Water Bottle — Little Explorers">
+        <img class="zoomable" data-group="mw-kids-water-bottle" data-caption="Kids Water Bottle — Little Explorers" src="images/more/kids-water-bottle/3.jpg" alt="Kids Water Bottle — Little Explorers">
+        <img class="zoomable" data-group="mw-kids-water-bottle" data-caption="Kids Water Bottle — Little Explorers" src="images/more/kids-water-bottle/4.jpg" alt="Kids Water Bottle — Little Explorers">
+        <img class="zoomable" data-group="mw-kids-water-bottle" data-caption="Kids Water Bottle — Little Explorers" src="images/more/kids-water-bottle/5.jpg" alt="Kids Water Bottle — Little Explorers">
+        <img class="zoomable" data-group="mw-kids-water-bottle" data-caption="Kids Water Bottle — Little Explorers" src="images/more/kids-water-bottle/6.jpg" alt="Kids Water Bottle — Little Explorers">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-travel-tumbler" data-caption="Insulated Travel Tumbler" src="images/more/travel-tumbler/1.jpg" alt="Insulated Travel Tumbler">
+        <div class="glabel">Insulated Travel Tumbler</div>
+        <span class="mw-badge">+7</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-travel-tumbler" data-caption="Insulated Travel Tumbler" src="images/more/travel-tumbler/2.jpg" alt="Insulated Travel Tumbler">
+        <img class="zoomable" data-group="mw-travel-tumbler" data-caption="Insulated Travel Tumbler" src="images/more/travel-tumbler/3.jpg" alt="Insulated Travel Tumbler">
+        <img class="zoomable" data-group="mw-travel-tumbler" data-caption="Insulated Travel Tumbler" src="images/more/travel-tumbler/4.jpg" alt="Insulated Travel Tumbler">
+        <img class="zoomable" data-group="mw-travel-tumbler" data-caption="Insulated Travel Tumbler" src="images/more/travel-tumbler/5.jpg" alt="Insulated Travel Tumbler">
+        <img class="zoomable" data-group="mw-travel-tumbler" data-caption="Insulated Travel Tumbler" src="images/more/travel-tumbler/6.jpg" alt="Insulated Travel Tumbler">
+        <img class="zoomable" data-group="mw-travel-tumbler" data-caption="Insulated Travel Tumbler" src="images/more/travel-tumbler/7.jpg" alt="Insulated Travel Tumbler">
+        <img class="zoomable" data-group="mw-travel-tumbler" data-caption="Insulated Travel Tumbler" src="images/more/travel-tumbler/8.jpg" alt="Insulated Travel Tumbler">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-sports-bottle" data-caption="Sports / Accident-Proof Bottle" src="images/more/sports-bottle/1.jpg" alt="Sports / Accident-Proof Bottle">
+        <div class="glabel">Sports / Accident-Proof Bottle</div>
+        <span class="mw-badge">+3</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-sports-bottle" data-caption="Sports / Accident-Proof Bottle" src="images/more/sports-bottle/2.jpg" alt="Sports / Accident-Proof Bottle">
+        <img class="zoomable" data-group="mw-sports-bottle" data-caption="Sports / Accident-Proof Bottle" src="images/more/sports-bottle/3.jpg" alt="Sports / Accident-Proof Bottle">
+        <img class="zoomable" data-group="mw-sports-bottle" data-caption="Sports / Accident-Proof Bottle" src="images/more/sports-bottle/4.jpg" alt="Sports / Accident-Proof Bottle">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-ocean-barware" data-caption="Ocean Whisky &amp; Rocks Glassware" src="images/more/ocean-barware/1.jpg" alt="Ocean Whisky &amp; Rocks Glassware">
+        <div class="glabel">Ocean Whisky &amp; Rocks Glassware</div>
+        <span class="mw-badge">+5</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-ocean-barware" data-caption="Ocean Whisky &amp; Rocks Glassware" src="images/more/ocean-barware/2.jpg" alt="Ocean Whisky &amp; Rocks Glassware">
+        <img class="zoomable" data-group="mw-ocean-barware" data-caption="Ocean Whisky &amp; Rocks Glassware" src="images/more/ocean-barware/3.jpg" alt="Ocean Whisky &amp; Rocks Glassware">
+        <img class="zoomable" data-group="mw-ocean-barware" data-caption="Ocean Whisky &amp; Rocks Glassware" src="images/more/ocean-barware/4.jpg" alt="Ocean Whisky &amp; Rocks Glassware">
+        <img class="zoomable" data-group="mw-ocean-barware" data-caption="Ocean Whisky &amp; Rocks Glassware" src="images/more/ocean-barware/5.jpg" alt="Ocean Whisky &amp; Rocks Glassware">
+        <img class="zoomable" data-group="mw-ocean-barware" data-caption="Ocean Whisky &amp; Rocks Glassware" src="images/more/ocean-barware/6.jpg" alt="Ocean Whisky &amp; Rocks Glassware">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-backpacks" data-caption="Backpacks &amp; Bags" src="images/more/backpacks/1.jpg" alt="Backpacks &amp; Bags">
+        <div class="glabel">Backpacks &amp; Bags</div>
+        <span class="mw-badge">+5</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-backpacks" data-caption="Backpacks &amp; Bags" src="images/more/backpacks/2.jpg" alt="Backpacks &amp; Bags">
+        <img class="zoomable" data-group="mw-backpacks" data-caption="Backpacks &amp; Bags" src="images/more/backpacks/3.jpg" alt="Backpacks &amp; Bags">
+        <img class="zoomable" data-group="mw-backpacks" data-caption="Backpacks &amp; Bags" src="images/more/backpacks/4.jpg" alt="Backpacks &amp; Bags">
+        <img class="zoomable" data-group="mw-backpacks" data-caption="Backpacks &amp; Bags" src="images/more/backpacks/5.jpg" alt="Backpacks &amp; Bags">
+        <img class="zoomable" data-group="mw-backpacks" data-caption="Backpacks &amp; Bags" src="images/more/backpacks/6.jpg" alt="Backpacks &amp; Bags">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-miraki-casserole" data-caption="Modware Miraki Casserole — Packaging" src="images/more/miraki-casserole/1.jpg" alt="Modware Miraki Casserole — Packaging">
+        <div class="glabel">Modware Miraki Casserole — Packaging</div>
+        <span class="mw-badge">+10</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-miraki-casserole" data-caption="Modware Miraki Casserole — Packaging" src="images/more/miraki-casserole/2.jpg" alt="Modware Miraki Casserole — Packaging">
+        <img class="zoomable" data-group="mw-miraki-casserole" data-caption="Modware Miraki Casserole — Packaging" src="images/more/miraki-casserole/3.jpg" alt="Modware Miraki Casserole — Packaging">
+        <img class="zoomable" data-group="mw-miraki-casserole" data-caption="Modware Miraki Casserole — Packaging" src="images/more/miraki-casserole/4.jpg" alt="Modware Miraki Casserole — Packaging">
+        <img class="zoomable" data-group="mw-miraki-casserole" data-caption="Modware Miraki Casserole — Packaging" src="images/more/miraki-casserole/5.jpg" alt="Modware Miraki Casserole — Packaging">
+        <img class="zoomable" data-group="mw-miraki-casserole" data-caption="Modware Miraki Casserole — Packaging" src="images/more/miraki-casserole/6.jpg" alt="Modware Miraki Casserole — Packaging">
+        <img class="zoomable" data-group="mw-miraki-casserole" data-caption="Modware Miraki Casserole — Packaging" src="images/more/miraki-casserole/7.jpg" alt="Modware Miraki Casserole — Packaging">
+        <img class="zoomable" data-group="mw-miraki-casserole" data-caption="Modware Miraki Casserole — Packaging" src="images/more/miraki-casserole/8.jpg" alt="Modware Miraki Casserole — Packaging">
+        <img class="zoomable" data-group="mw-miraki-casserole" data-caption="Modware Miraki Casserole — Packaging" src="images/more/miraki-casserole/9.jpg" alt="Modware Miraki Casserole — Packaging">
+        <img class="zoomable" data-group="mw-miraki-casserole" data-caption="Modware Miraki Casserole — Packaging" src="images/more/miraki-casserole/10.jpg" alt="Modware Miraki Casserole — Packaging">
+        <img class="zoomable" data-group="mw-miraki-casserole" data-caption="Modware Miraki Casserole — Packaging" src="images/more/miraki-casserole/11.jpg" alt="Modware Miraki Casserole — Packaging">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-florenza-casserole" data-caption="Modware Florenza Casserole — Packaging" src="images/more/florenza-casserole/1.jpg" alt="Modware Florenza Casserole — Packaging">
+        <div class="glabel">Modware Florenza Casserole — Packaging</div>
+        <span class="mw-badge">+3</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-florenza-casserole" data-caption="Modware Florenza Casserole — Packaging" src="images/more/florenza-casserole/2.jpg" alt="Modware Florenza Casserole — Packaging">
+        <img class="zoomable" data-group="mw-florenza-casserole" data-caption="Modware Florenza Casserole — Packaging" src="images/more/florenza-casserole/3.jpg" alt="Modware Florenza Casserole — Packaging">
+        <img class="zoomable" data-group="mw-florenza-casserole" data-caption="Modware Florenza Casserole — Packaging" src="images/more/florenza-casserole/4.jpg" alt="Modware Florenza Casserole — Packaging">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-surface-pattern" data-caption="Modware Surface Pattern Design" src="images/more/surface-pattern/1.jpg" alt="Modware Surface Pattern Design">
+        <div class="glabel">Modware Surface Pattern Design</div>
+        <span class="mw-badge">+2</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-surface-pattern" data-caption="Modware Surface Pattern Design" src="images/more/surface-pattern/2.jpg" alt="Modware Surface Pattern Design">
+        <img class="zoomable" data-group="mw-surface-pattern" data-caption="Modware Surface Pattern Design" src="images/more/surface-pattern/3.jpg" alt="Modware Surface Pattern Design">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-sunlife-steel-lock" data-caption="Sunlife Steel Lock — Label Design" src="images/more/sunlife-steel-lock/1.jpg" alt="Sunlife Steel Lock — Label Design">
+        <div class="glabel">Sunlife Steel Lock — Label Design</div>
+        
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-klean-kube" data-caption="Klean Kube Pedal Bin — Packaging" src="images/more/klean-kube/1.jpg" alt="Klean Kube Pedal Bin — Packaging">
+        <div class="glabel">Klean Kube Pedal Bin — Packaging</div>
+        
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-milda-bottles" data-caption="Milda Water Bottles — Packaging" src="images/more/milda-bottles/1.jpg" alt="Milda Water Bottles — Packaging">
+        <div class="glabel">Milda Water Bottles — Packaging</div>
+        <span class="mw-badge">+1</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-milda-bottles" data-caption="Milda Water Bottles — Packaging" src="images/more/milda-bottles/2.jpg" alt="Milda Water Bottles — Packaging">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-aarus-candle" data-caption="Aaru&#39;s Candle &amp; Gifting — Brand Cards" src="images/more/aarus-candle/1.jpg" alt="Aaru&#39;s Candle &amp; Gifting — Brand Cards">
+        <div class="glabel">Aaru's Candle &amp; Gifting — Brand Cards</div>
+        <span class="mw-badge">+2</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-aarus-candle" data-caption="Aaru&#39;s Candle &amp; Gifting — Brand Cards" src="images/more/aarus-candle/2.jpg" alt="Aaru&#39;s Candle &amp; Gifting — Brand Cards">
+        <img class="zoomable" data-group="mw-aarus-candle" data-caption="Aaru&#39;s Candle &amp; Gifting — Brand Cards" src="images/more/aarus-candle/3.jpg" alt="Aaru&#39;s Candle &amp; Gifting — Brand Cards">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-cutest-dino" data-caption="Cutest Dino — Kids Lunchbox" src="images/more/cutest-dino/1.jpg" alt="Cutest Dino — Kids Lunchbox">
+        <div class="glabel">Cutest Dino — Kids Lunchbox</div>
+        <span class="mw-badge">+1</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-cutest-dino" data-caption="Cutest Dino — Kids Lunchbox" src="images/more/cutest-dino/2.jpg" alt="Cutest Dino — Kids Lunchbox">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-airtight-jars" data-caption="Airtight Storage Jar Range" src="images/more/airtight-jars/1.jpg" alt="Airtight Storage Jar Range">
+        <div class="glabel">Airtight Storage Jar Range</div>
+        <span class="mw-badge">+7</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-airtight-jars" data-caption="Airtight Storage Jar Range" src="images/more/airtight-jars/2.jpg" alt="Airtight Storage Jar Range">
+        <img class="zoomable" data-group="mw-airtight-jars" data-caption="Airtight Storage Jar Range" src="images/more/airtight-jars/3.jpg" alt="Airtight Storage Jar Range">
+        <img class="zoomable" data-group="mw-airtight-jars" data-caption="Airtight Storage Jar Range" src="images/more/airtight-jars/4.jpg" alt="Airtight Storage Jar Range">
+        <img class="zoomable" data-group="mw-airtight-jars" data-caption="Airtight Storage Jar Range" src="images/more/airtight-jars/5.jpg" alt="Airtight Storage Jar Range">
+        <img class="zoomable" data-group="mw-airtight-jars" data-caption="Airtight Storage Jar Range" src="images/more/airtight-jars/6.jpg" alt="Airtight Storage Jar Range">
+        <img class="zoomable" data-group="mw-airtight-jars" data-caption="Airtight Storage Jar Range" src="images/more/airtight-jars/7.jpg" alt="Airtight Storage Jar Range">
+        <img class="zoomable" data-group="mw-airtight-jars" data-caption="Airtight Storage Jar Range" src="images/more/airtight-jars/8.jpg" alt="Airtight Storage Jar Range">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-lock-store-fruit" data-caption="Lock &amp; Store Container — Fruit-Safe Range" src="images/more/lock-store-fruit/1.jpg" alt="Lock &amp; Store Container — Fruit-Safe Range">
+        <div class="glabel">Lock &amp; Store Container — Fruit-Safe Range</div>
+        <span class="mw-badge">+7</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-lock-store-fruit" data-caption="Lock &amp; Store Container — Fruit-Safe Range" src="images/more/lock-store-fruit/2.jpg" alt="Lock &amp; Store Container — Fruit-Safe Range">
+        <img class="zoomable" data-group="mw-lock-store-fruit" data-caption="Lock &amp; Store Container — Fruit-Safe Range" src="images/more/lock-store-fruit/3.jpg" alt="Lock &amp; Store Container — Fruit-Safe Range">
+        <img class="zoomable" data-group="mw-lock-store-fruit" data-caption="Lock &amp; Store Container — Fruit-Safe Range" src="images/more/lock-store-fruit/4.jpg" alt="Lock &amp; Store Container — Fruit-Safe Range">
+        <img class="zoomable" data-group="mw-lock-store-fruit" data-caption="Lock &amp; Store Container — Fruit-Safe Range" src="images/more/lock-store-fruit/5.jpg" alt="Lock &amp; Store Container — Fruit-Safe Range">
+        <img class="zoomable" data-group="mw-lock-store-fruit" data-caption="Lock &amp; Store Container — Fruit-Safe Range" src="images/more/lock-store-fruit/6.jpg" alt="Lock &amp; Store Container — Fruit-Safe Range">
+        <img class="zoomable" data-group="mw-lock-store-fruit" data-caption="Lock &amp; Store Container — Fruit-Safe Range" src="images/more/lock-store-fruit/7.jpg" alt="Lock &amp; Store Container — Fruit-Safe Range">
+        <img class="zoomable" data-group="mw-lock-store-fruit" data-caption="Lock &amp; Store Container — Fruit-Safe Range" src="images/more/lock-store-fruit/8.jpg" alt="Lock &amp; Store Container — Fruit-Safe Range">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-oil-dispenser" data-caption="Oil Dispenser Bottle" src="images/more/oil-dispenser/1.jpg" alt="Oil Dispenser Bottle">
+        <div class="glabel">Oil Dispenser Bottle</div>
+        <span class="mw-badge">+6</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-oil-dispenser" data-caption="Oil Dispenser Bottle" src="images/more/oil-dispenser/2.jpg" alt="Oil Dispenser Bottle">
+        <img class="zoomable" data-group="mw-oil-dispenser" data-caption="Oil Dispenser Bottle" src="images/more/oil-dispenser/3.jpg" alt="Oil Dispenser Bottle">
+        <img class="zoomable" data-group="mw-oil-dispenser" data-caption="Oil Dispenser Bottle" src="images/more/oil-dispenser/4.jpg" alt="Oil Dispenser Bottle">
+        <img class="zoomable" data-group="mw-oil-dispenser" data-caption="Oil Dispenser Bottle" src="images/more/oil-dispenser/5.jpg" alt="Oil Dispenser Bottle">
+        <img class="zoomable" data-group="mw-oil-dispenser" data-caption="Oil Dispenser Bottle" src="images/more/oil-dispenser/6.jpg" alt="Oil Dispenser Bottle">
+        <img class="zoomable" data-group="mw-oil-dispenser" data-caption="Oil Dispenser Bottle" src="images/more/oil-dispenser/7.jpg" alt="Oil Dispenser Bottle">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-stackable-bin" data-caption="Stackable Storage Bin" src="images/more/stackable-bin/1.jpg" alt="Stackable Storage Bin">
+        <div class="glabel">Stackable Storage Bin</div>
+        <span class="mw-badge">+3</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-stackable-bin" data-caption="Stackable Storage Bin" src="images/more/stackable-bin/2.jpg" alt="Stackable Storage Bin">
+        <img class="zoomable" data-group="mw-stackable-bin" data-caption="Stackable Storage Bin" src="images/more/stackable-bin/3.jpg" alt="Stackable Storage Bin">
+        <img class="zoomable" data-group="mw-stackable-bin" data-caption="Stackable Storage Bin" src="images/more/stackable-bin/4.jpg" alt="Stackable Storage Bin">
+      </div>
+      <div class="gtile mw-tile">
+        <img class="zoomable" data-group="mw-easy-lock-store" data-caption="Modware Easy Lock &amp; Store Bins" src="images/more/easy-lock-store/1.jpg" alt="Modware Easy Lock &amp; Store Bins">
+        <div class="glabel">Modware Easy Lock &amp; Store Bins</div>
+        <span class="mw-badge">+1</span>
+      </div>
+      <div class="mw-hidden-group">
+        <img class="zoomable" data-group="mw-easy-lock-store" data-caption="Modware Easy Lock &amp; Store Bins" src="images/more/easy-lock-store/2.jpg" alt="Modware Easy Lock &amp; Store Bins">
+      </div>
+    <!-- MORE_WORK_ITEMS_END -->
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="alt-bg">
+  <div class="section-head">
+    <span class="eyebrow">About</span>
+    <h2>The short version.</h2>
+  </div>
+  <div class="about-grid">
+    <div class="monogram">
+      <img src="images/profile-sandhya.jpg" alt="Sandhya Pal">
+    </div>
+    <div class="about-copy">
+      <p class="lead">I'm a graphic designer based in Mumbai with two years of professional experience across commercial product and e-commerce design, image editing and retouching, packaging and catalogue layout, and festive/creative design work.</p>
+      <p>My strongest body of work sits in product and e-commerce creative — image editing, retouching and feature-led advertisements — built alongside hands-on experience in catalogue layout, structural packaging, and promotional and festive illustration. It's a working combination of production-focused Photoshop and Illustrator craft with broader layout and design ability.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience">
+  <div class="section-head">
+    <span class="eyebrow">Experience</span>
+    <h2>Career timeline.</h2>
+  </div>
+  <div class="timeline">
+    <div class="trow">
+      <div class="period">Jun 2025 — Jul 2026</div>
+      <div>
+        <span class="role">Graphic Designer</span>
+        <h4>Aadhya Graphics</h4>
+      </div>
+      <div class="work-desc">Product image editing, e-commerce creatives and product posts, packaging &amp; sticker design, and promotional / festive creative design.</div>
+    </div>
+    <div class="trow">
+      <div class="period">Sep 2024 — Apr 2025</div>
+      <div>
+        <span class="role">Graphic Designer</span>
+        <h4>Jewel Goldie</h4>
+      </div>
+      <div class="work-desc">Jewellery image editing and product retouching — high-detail work on reflective surfaces.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION + SKILLS ================= -->
+<section id="skills" class="alt-bg">
+  <div class="es-grid">
+    <div class="es-block">
+      <h3>Education</h3>
+      <div class="edu-item">
+        <h4>Diploma in Advanced Graphic Designing</h4>
+        <span class="edu-period">Shankar Multimedia · Jun 2024 — Aug 2024</span>
+        <p>Foundational training across the design software and layout principles I've applied throughout my professional work since.</p>
+      </div>
+    </div>
+    <div class="es-block">
+      <h3>Software</h3>
+      <div class="tool-group core">
+        <span class="tg-label">Core Tools</span>
+        <div class="tool-tags">
+          <span>Adobe Photoshop</span>
+          <span>Adobe Illustrator</span>
+        </div>
+      </div>
+      <div class="tool-group secondary">
+        <span class="tg-label">Also Worked With</span>
+        <div class="tool-tags">
+          <span>CorelDRAW</span>
+          <span>Adobe InDesign</span>
+          <span>Adobe XD</span>
+          <span>Adobe Lightroom</span>
+          <span>Figma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="contact-inner">
+      <div class="contact-cta">
+        <span class="eyebrow">Contact</span>
+        <h2 style="margin-top:14px;">Available for freelance and full-time design work.</h2>
+      </div>
+      <div class="contact-details">
+        <div class="cd-item">
+          <span class="cd-label">Email</span>
+          <a href="mailto:sandhyapal323@gmail.com">sandhyapal323@gmail.com</a>
+        </div>
+        <div class="cd-item">
+          <span class="cd-label">Phone</span>
+          <a href="tel:+919372297718">+91 93722 97718</a>
+        </div>
+        <div class="cd-item">
+          <span class="cd-label">Location</span>
+          <span>Mumbai, India</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <span>Sandhya Pal — Graphic Designer</span>
+    <span>Portfolio, 2026</span>
+  </footer>
+</section>
+
+<!-- ================= PROJECT OVERLAY: CATALOGUE ================= -->
+<div class="overlay" id="overlay-catalogue">
+  <div class="overlay-head">
+    <div class="overlay-head-inner">
+      <span class="overlay-title">01 — Modware Kitchen Appliances Catalogue</span>
+      <button class="close-btn" data-close>✕</button>
+    </div>
+  </div>
+  <div class="overlay-body">
+    <span class="eyebrow overlay-eyebrow">Print &amp; Catalogue Design</span>
+    <h1>Modware Kitchen<br>Appliances Catalogue</h1>
+    <p class="overlay-intro">A seven-page product catalogue for Modware's thermoware range, built as a full print publication — cover, brand introduction, table of contents, and categorised product spreads. The most structurally sophisticated piece in the portfolio: grid systems, information hierarchy, iconography and consistent brand application across every page.</p>
+    <div class="skill-pills">
+      <span>Multi-page layout</span><span>Grid systems</span><span>Information hierarchy</span>
+      <span>Product categorisation</span><span>Iconography</span><span>Brand consistency</span>
+    </div>
+
+    <div class="spread-viewer">
+      <div class="spread-stage">
+        <img id="spreadImg" class="zoomable" data-group="catalogue-zoom" src="images/catalogue/01-cover.jpg" alt="Catalogue spread">
+      </div>
+      <div class="spread-nav">
+        <button class="spread-btn" id="spreadPrev">←</button>
+        <div class="spread-label">Page <span class="cur-num" id="spreadCur">1</span> / 7 — <span id="spreadLabel">Cover</span></div>
+        <button class="spread-btn" id="spreadNext">→</button>
+      </div>
+      <div class="spread-dots" id="spreadDots"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PROJECT OVERLAY: PACKAGING ================= -->
+<div class="overlay" id="overlay-packaging">
+  <div class="overlay-head">
+    <div class="overlay-head-inner">
+      <span class="overlay-title">02 — Packaging &amp; Structural Design</span>
+      <button class="close-btn" data-close>✕</button>
+    </div>
+  </div>
+  <div class="overlay-body">
+    <span class="eyebrow overlay-eyebrow">Packaging Design</span>
+    <h1>Packaging &amp; Structural Design</h1>
+    <p class="overlay-intro">Three technical packaging pieces built around dieline layout, panel organisation and fold logic — a blender box, an insulated tumbler carton, and a fold-out warranty card carrying regulatory and instructional content.</p>
+    <div class="skill-pills">
+      <span>Dieline layout</span><span>Structural packaging</span><span>Panel organisation</span>
+      <span>Fold logic</span><span>Technical content placement</span><span>Regulatory / instructional layout</span>
+    </div>
+
+    <div class="panel-block">
+      <div class="pb-label"><h3>Rico Nutri Fresh — Blender Box Dieline</h3><span class="pb-tag">Full wrap</span></div>
+      <div class="panel-img"><img class="zoomable" data-group="packaging" data-caption="Rico Nutri Fresh — Blender Box Dieline" src="images/packaging/rico-nutri-fresh-dieline.jpg" alt="Rico Nutri Fresh blender box dieline"></div>
+      <p class="panel-note">Full box-wrap dieline for a 400W mixer-grinder — feature call-outs, certification marks and specification panel laid out across the fold.</p>
+    </div>
+
+    <div class="panel-block">
+      <div class="pb-label"><h3>Liza H2O — Insulated Tumbler Dieline</h3><span class="pb-tag">Box dieline</span></div>
+      <div class="panel-img"><img class="zoomable" data-group="packaging" data-caption="Liza H2O — Insulated Tumbler Dieline" src="images/packaging/liza-h2o-dieline.jpg" alt="Liza H2O tumbler box dieline"></div>
+      <p class="panel-note">Structural carton layout for an insulated tumbler, balancing product photography with panel-level product information.</p>
+    </div>
+
+    <div class="panel-block">
+      <div class="pb-label"><h3>Bombay Kookware — Warranty Card &amp; Manual</h3><span class="pb-tag">Fold-out · smaller technical piece</span></div>
+      <div class="panel-img small"><img class="zoomable" data-group="packaging" data-caption="Bombay Kookware — Warranty Card &amp; Manual" src="images/packaging/bombay-kookware-warranty-card.jpg" alt="Bombay Kookware pressure cooker warranty card and manual"></div>
+      <p class="panel-note">Fold-out warranty card and user manual for a stainless-steel pressure cooker — instructional diagrams, safety content and warranty terms organised for a compact printed format.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PROJECT OVERLAY: CELLO ================= -->
+<div class="overlay" id="overlay-cello">
+  <div class="overlay-head">
+    <div class="overlay-head-inner">
+      <span class="overlay-title">03 — Cello Novelty Shoe Rack Campaign</span>
+      <button class="close-btn" data-close>✕</button>
+    </div>
+  </div>
+  <div class="overlay-body">
+    <span class="eyebrow overlay-eyebrow">Product &amp; E-commerce Design</span>
+    <h1>Cello Novelty<br>Shoe Rack Campaign</h1>
+    <p class="overlay-intro">A single storage cabinet, communicated through three creative beats across two colourways — a hero product shot, room-by-room lifestyle staging that shows the product living in a home, and installation &amp; specification detail for the practical buyer.</p>
+    <div class="skill-pills">
+      <span>Hero product photography</span><span>Lifestyle staging</span><span>Installation &amp; spec detail</span><span>Multi-colourway campaign</span>
+    </div>
+
+    <div class="project-subhead">Hero</div>
+    <div class="gallery-grid pair" style="padding:0;margin-bottom:10px;">
+      <div class="gtile"><img class="zoomable" data-group="cello-hero" data-caption="Cello Novelty Big Shoe Rack — Charcoal" src="images/cello/hero-charcoal.jpg" alt="Cello Novelty shoe rack, charcoal colourway"><div class="glabel">Charcoal &amp; Wood-Tone</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-hero" data-caption="Cello Novelty Big Cabinet — Green" src="images/cello/hero-green.jpg" alt="Cello Novelty cabinet, green colourway"><div class="glabel">Olive Green</div></div>
+    </div>
+
+    <div class="project-subhead">Lifestyle — In the Room</div>
+    <div class="gallery-grid" style="padding:0;margin-bottom:10px;">
+      <div class="gtile"><img class="zoomable" data-group="cello-lifestyle" data-caption="Lobby" src="images/cello/lobby.jpg" alt="Cello shoe rack in a lobby"><div class="glabel">Lobby</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-lifestyle" data-caption="Main Entrance" src="images/cello/main-entrance.jpg" alt="Cello shoe rack at main entrance"><div class="glabel">Main Entrance</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-lifestyle" data-caption="Living Room" src="images/cello/living-room.jpg" alt="Cello cabinet in living room"><div class="glabel">Living Room</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-lifestyle" data-caption="Office Entrance" src="images/cello/office-entrance.jpg" alt="Cello shoe rack at office entrance"><div class="glabel">Office Entrance</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-lifestyle" data-caption="Laundry Room" src="images/cello/laundry-room.jpg" alt="Cello cabinet in laundry room"><div class="glabel">Laundry Room</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-lifestyle" data-caption="Kitchen" src="images/cello/kitchen.jpg" alt="Cello cabinet in kitchen"><div class="glabel">Kitchen</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-lifestyle" data-caption="Bathroom" src="images/cello/bathroom.jpg" alt="Cello cabinet in bathroom"><div class="glabel">Bathroom</div></div>
+    </div>
+
+    <div class="project-subhead">Installation &amp; Specification</div>
+    <div class="gallery-grid" style="padding:0;margin-top:10px;">
+      <div class="gtile"><img class="zoomable" data-group="cello-install" data-caption="Effortless Installation" src="images/cello/install-charcoal.jpg" alt="Cello shoe rack installation steps"><div class="glabel">Effortless Installation</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-install" data-caption="Effortless Installation — Green" src="images/cello/install-green.jpg" alt="Cello cabinet installation steps, green"><div class="glabel">Installation — Green</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-install" data-caption="Capacity &amp; Dimensions" src="images/cello/dimensions-1.jpg" alt="Cello shoe rack dimensions diagram"><div class="glabel">Capacity &amp; Dimensions</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-install" data-caption="Weight Capacity &amp; Dimensions" src="images/cello/dimensions-2.jpg" alt="Cello cabinet weight capacity diagram"><div class="glabel">Weight Capacity</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-install" data-caption="Feature Callouts" src="images/cello/features-charcoal.jpg" alt="Cello shoe rack feature callouts"><div class="glabel">Feature Callouts</div></div>
+      <div class="gtile"><img class="zoomable" data-group="cello-install" data-caption="Feature Callouts — Green" src="images/cello/features-green.jpg" alt="Cello cabinet feature callouts, green"><div class="glabel">Feature Callouts — Green</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PROJECT OVERLAY: E-COMMERCE ================= -->
+<div class="overlay" id="overlay-ecommerce">
+  <div class="overlay-head">
+    <div class="overlay-head-inner">
+      <span class="overlay-title">04 — Product &amp; E-commerce Creative</span>
+      <button class="close-btn" data-close>✕</button>
+    </div>
+  </div>
+  <div class="overlay-body">
+    <span class="eyebrow overlay-eyebrow">Product &amp; E-commerce Design</span>
+    <h1>Product &amp; E-commerce Creative</h1>
+    <p class="overlay-intro">Feature-led advertisements and listing creatives across kitchen appliances and storage — built to sell and explain a product at a glance, for both shelf and scroll.</p>
+    <div class="skill-pills">
+      <span>Feature-led advertising</span><span>E-commerce listing creative</span><span>Product photography finishing</span><span>Layout for scroll &amp; shelf</span>
+    </div>
+    <div class="gallery-grid" style="padding:0;margin-top:10px;">
+      <div class="gtile wide"><img class="zoomable" data-group="ecommerce" data-caption="Philips — Kettle Banner" src="images/ecommerce/philips-kettle-banner.jpg" alt="Philips kettle banner advertisement"><div class="glabel">Philips — Kettle Banner</div></div>
+      <div class="gtile"><img class="zoomable" data-group="ecommerce" data-caption="Modware — Transparent Container" src="images/ecommerce/modware-transparent-container.jpg" alt="Modware transparent storage container advertisement"><div class="glabel">Modware — Transparent Container</div></div>
+      <div class="gtile"><img class="zoomable" data-group="ecommerce" data-caption="Modware — Max Storage Container" src="images/ecommerce/modware-max-storage.jpg" alt="Modware Max storage container"><div class="glabel">Modware — Max Storage Container</div></div>
+      <div class="gtile"><img class="zoomable" data-group="ecommerce" data-caption="Mixer Grinder — Listing Creative" src="images/ecommerce/mixer-grinder-red.jpg" alt="Mixer grinder product creative"><div class="glabel">Mixer Grinder — Listing Creative</div></div>
+      <div class="gtile"><img class="zoomable" data-group="ecommerce" data-caption="Mixer Grinder — Listing Creative" src="images/ecommerce/mixer-grinder-black.jpg" alt="Mixer grinder product creative"><div class="glabel">Mixer Grinder — Listing Creative</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PROJECT OVERLAY: SURFACE ================= -->
+<div class="overlay" id="overlay-surface">
+  <div class="overlay-head">
+    <div class="overlay-head-inner">
+      <span class="overlay-title">05 — Reflective Surface Editing</span>
+      <button class="close-btn" data-close>✕</button>
+    </div>
+  </div>
+  <div class="overlay-body">
+    <span class="eyebrow overlay-eyebrow">Product &amp; Technical Editing</span>
+    <h1>Reflective Surface Editing</h1>
+    <p class="overlay-intro">Stainless steel, glass and jewellery are some of the hardest materials to edit convincingly. This is a comparison of consistent, careful finishing across all three.</p>
+    <div class="skill-pills">
+      <span>Steel retouching</span><span>Glass retouching</span><span>Jewellery editing</span><span>Product photography finishing</span>
+    </div>
+    <div class="gallery-grid" style="padding:0;margin-top:10px;">
+      <div class="gtile"><img class="zoomable" data-group="surface" data-caption="Stainless-Steel Casserole" src="images/surface/steel-casserole.jpg" alt="Stainless steel casserole"><div class="glabel">Stainless-Steel Casserole</div></div>
+      <div class="gtile"><img class="zoomable" data-group="surface" data-caption="Boss — Exploded Parts Set" src="images/surface/boss-kettle-exploded.jpg" alt="Boss kettle exploded parts set"><div class="glabel">Boss — Exploded Parts Set</div></div>
+      <div class="gtile"><img class="zoomable" data-group="surface" data-caption="Ocean — Tall Tumblers" src="images/surface/ocean-tall-tumblers.jpg" alt="Ocean tall tumblers"><div class="glabel">Ocean — Tall Tumblers</div></div>
+      <div class="gtile"><img class="zoomable" data-group="surface" data-caption="Ocean — Short Tumblers" src="images/surface/ocean-short-tumblers.jpg" alt="Ocean short tumblers"><div class="glabel">Ocean — Short Tumblers</div></div>
+      <div class="gtile"><img class="zoomable" data-group="surface" data-caption="Rose-Gold Diamond Ring" src="images/surface/rose-gold-ring.jpg" alt="Rose gold diamond ring"><div class="glabel">Rose-Gold Diamond Ring</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PROJECT OVERLAY: FESTIVE ================= -->
+<div class="overlay" id="overlay-festive">
+  <div class="overlay-head">
+    <div class="overlay-head-inner">
+      <span class="overlay-title">06 — Festive &amp; Cultural Illustration</span>
+      <button class="close-btn" data-close>✕</button>
+    </div>
+  </div>
+  <div class="overlay-body">
+    <span class="eyebrow overlay-eyebrow">Illustration · Festive · Cultural</span>
+    <h1>Festive &amp; Cultural Illustration</h1>
+    <p class="overlay-intro">The most expressive treatment in the portfolio — vector illustration, typography and colour composition, produced for Aadhya Graphics across four festive and cultural occasions.</p>
+    <div class="skill-pills">
+      <span>Vector illustration</span><span>Cultural &amp; festive design</span><span>Typography</span><span>Colour composition</span>
+    </div>
+    <div class="gallery-grid pair" style="padding:0;margin-top:10px;">
+      <div class="gtile"><img class="zoomable" data-group="festive" data-caption="Gudi Padwa" src="images/festive/gudi-padwa.jpg" alt="Gudi Padwa festive creative"><div class="glabel">Gudi Padwa</div></div>
+      <div class="gtile"><img class="zoomable" data-group="festive" data-caption="Happy Makar Sankranti" src="images/festive/makar-sankranti.jpg" alt="Makar Sankranti festive creative"><div class="glabel">Happy Makar Sankranti</div></div>
+      <div class="gtile"><img class="zoomable" data-group="festive" data-caption="Republic Day" src="images/festive/republic-day.jpg" alt="Republic Day festive creative"><div class="glabel">Republic Day</div></div>
+      <div class="gtile"><img class="zoomable" data-group="festive" data-caption="Maha Shivratri" src="images/festive/maha-shivratri.jpg" alt="Maha Shivratri festive creative"><div class="glabel">Maha Shivratri</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <button class="lightbox-nav prev" id="lightboxPrev">←</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav next" id="lightboxNext">→</button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+  // ---- hero crossfade ----
+  (function(){
+    const imgs = document.querySelectorAll('#heroVisual img');
+    const caption = document.getElementById('heroCaption');
+    let idx = 0;
+    setInterval(()=>{
+      imgs[idx].classList.remove('active');
+      idx = (idx+1) % imgs.length;
+      imgs[idx].classList.add('active');
+      caption.textContent = imgs[idx].dataset.label;
+    }, 4200);
+  })();
+
+  // ---- filters ----
+  (function(){
+    const chips = document.querySelectorAll('#filters .chip');
+    const items = document.querySelectorAll('.work-item');
+    chips.forEach(chip=>{
+      chip.addEventListener('click', ()=>{
+        chips.forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+        const f = chip.dataset.filter;
+        items.forEach(it=>{
+          it.style.display = (f==='all' || it.dataset.filter===f) ? '' : 'none';
+        });
+      });
+    });
+  })();
+
+  // ---- project overlays ----
+  (function(){
+    document.querySelectorAll('.work-item').forEach(item=>{
+      item.addEventListener('click', ()=>{
+        const proj = item.dataset.project;
+        const overlay = document.getElementById('overlay-'+proj);
+        if(overlay){ overlay.classList.add('open'); document.body.style.overflow='hidden'; overlay.scrollTop=0; }
+      });
+    });
+    document.querySelectorAll('[data-close]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        btn.closest('.overlay').classList.remove('open');
+        document.body.style.overflow='';
+      });
+    });
+  })();
+
+  // ---- catalogue spread viewer ----
+  (function(){
+    const pages = [
+      {src:"images/catalogue/01-cover.jpg", label:"Cover"},
+      {src:"images/catalogue/02-about-us.jpg", label:"About Us"},
+      {src:"images/catalogue/03-table-of-contents.jpg", label:"Table of Contents"},
+      {src:"images/catalogue/04-thermoware-i.jpg", label:"Thermoware — Emirates, Atlantis, Royal &amp; Ambiente"},
+      {src:"images/catalogue/05-thermoware-ii.jpg", label:"Thermoware — Marbello, Kohenoor, Victoria &amp; Insulated"},
+      {src:"images/catalogue/06-thermoware-iii.jpg", label:"Thermoware — Manaco, Oxford &amp; Kafto"},
+      {src:"images/catalogue/07-back-cover.jpg", label:"Back Cover"}
+    ];
+    let cur = 0;
+    const img = document.getElementById('spreadImg');
+    const curNum = document.getElementById('spreadCur');
+    const label = document.getElementById('spreadLabel');
+    const prevBtn = document.getElementById('spreadPrev');
+    const nextBtn = document.getElementById('spreadNext');
+    const dotsWrap = document.getElementById('spreadDots');
+
+    pages.forEach((p,i)=>{
+      const dot = document.createElement('span');
+      if(i===0) dot.classList.add('active');
+      dot.addEventListener('click', ()=>{ cur=i; render(); });
+      dotsWrap.appendChild(dot);
+    });
+
+    function render(){
+      img.src = pages[cur].src;
+      img.dataset.caption = pages[cur].label.replace(/&amp;/g,'&');
+      curNum.textContent = cur+1;
+      label.innerHTML = pages[cur].label;
+      prevBtn.disabled = cur===0;
+      nextBtn.disabled = cur===pages.length-1;
+      [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('active', i===cur));
+    }
+    prevBtn.addEventListener('click', ()=>{ if(cur>0){cur--;render();} });
+    nextBtn.addEventListener('click', ()=>{ if(cur<pages.length-1){cur++;render();} });
+    render();
+  })();
+
+  // ---- lightbox (click-to-expand) ----
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbCaption = document.getElementById('lightboxCaption');
+    const lbPrev = document.getElementById('lightboxPrev');
+    const lbNext = document.getElementById('lightboxNext');
+    const lbClose = document.getElementById('lightboxClose');
+    let group = [];
+    let index = 0;
+
+    function collectGroup(el){
+      const g = el.dataset.group;
+      if(!g) return [el];
+      return Array.from(document.querySelectorAll(`img.zoomable[data-group="${g}"]`));
+    }
+    function render(){
+      const el = group[index];
+      lbImg.src = el.getAttribute('src');
+      lbCaption.textContent = el.dataset.caption || el.alt || '';
+      const multi = group.length > 1;
+      lbPrev.style.display = multi ? 'flex' : 'none';
+      lbNext.style.display = multi ? 'flex' : 'none';
+    }
+    function openAt(el){
+      group = collectGroup(el);
+      index = group.indexOf(el);
+      render();
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('click', (e)=>{
+      const el = e.target.closest('img.zoomable');
+      if(el){ e.stopPropagation(); openAt(el); }
+    });
+    lbPrev.addEventListener('click', ()=>{ index = (index-1+group.length)%group.length; render(); });
+    lbNext.addEventListener('click', ()=>{ index = (index+1)%group.length; render(); });
+    lbClose.addEventListener('click', close);
+    lb.addEventListener('click', (e)=>{ if(e.target===lb) close(); });
+    document.addEventListener('keydown', (e)=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') close();
+      if(e.key==='ArrowLeft') lbPrev.click();
+      if(e.key==='ArrowRight') lbNext.click();
+    });
+  })();
+</script>
+
+</body>
+</html>
